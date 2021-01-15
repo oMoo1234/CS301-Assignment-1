@@ -65,7 +65,21 @@ def Problem_Three():
 
 #Problem 4: Find all words that can be made from tiles.
 def Problem_Four():
-    print("This is the fourth problem.") #TODO Replace Me
+    tiles = ['r','e','t','a','i','n','s']
+    wordTile = "".join(tiles) 
+    emp = []
+    print(wordTile)
+    text = open('words.txt')
+    for word in text:
+        for x in word:
+            if x in wordTile and x not in emp:
+                emp.append(x)
+                if len(emp) == len(wordTile):
+                    for x in emp:
+                        print(x,end="")                  
+                print()
+                emp.clear()
+                time.sleep(1) #TODO Replace Me
 
 #Problem 5: NYT Spelling Bee Puzzle.
 def Problem_Five():
